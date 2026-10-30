@@ -1,0 +1,1 @@
+{ description = "Windows Demo"; outputs = { self, nixpkgs }: { apps.x86_64-linux.default = { type = "app"; program = toString (nixpkgs.legacyPackages.x86_64-linux.writeShellScript "run" "NIXPKGS_ALLOW_UNFREE=1 exec nix run --impure github:nix-windows/nix-windows-demo"); }; }; inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable"; }
